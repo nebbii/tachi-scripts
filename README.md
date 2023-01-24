@@ -15,7 +15,7 @@ This script supports jubeat and MUSECA.
 ## Setting up for dummies
 
 0. Install Tampermonkey ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/), [Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo))
-1. Click on the script you'd like to install, then `Raw`.
+1. Click on the script you'd like to install, then `Raw`. If Tampermonkey opens and asks you to install the script, you're good to go! If not, continue below.
 2. Copy the script (Select All, Copy)
 3. Open Tampermonkey's menu, then click on `Add a new script`.
 4. Paste the script, save it using the dropdown menu or `Ctrl` + `S`.
