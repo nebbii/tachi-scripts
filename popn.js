@@ -55,8 +55,7 @@ function getScores(goToNextPage) {
         superScores.forEach(score =>  scores.push(score));
     }
 
-    const sCtFromImgId = ["failedUnknown","failedCircle","failedDiamond","failedStar","easyClear","clearCircle","clearDiamond","clearStar","fullComboCircle","fullComboDiamond","fullComboStar","perfect"];
-    const lampFromImgId = ["FAILED","FAILED","FAILED","FAILED","EASY CLEAR","CLEAR","CLEAR","CLEAR","FULL COMBO","FULL COMBO","FULL COMBO","PERFECT"];
+    const clearMedalFromImgId = ["failedUnknown","failedCircle","failedDiamond","failedStar","easyClear","clearCircle","clearDiamond","clearStar","fullComboCircle","fullComboDiamond","fullComboStar","perfect"];
 
 
     for(var i = 0; i < scoreLines.length; i += 2) {
@@ -67,8 +66,7 @@ function getScores(goToNextPage) {
             let difficulty = scoreLines[i].querySelector("td:nth-child(2)").innerText.split("\n")[1]
             const clearImageId = Number(scoreLines[i].querySelector("td:nth-child(3) > img").getAttribute("src").replace("https://cdn.projectflower.eu/pnm/grades/pnm_lamp_popn_", "").replace(".png", ""));
             const score = Number(scoreLines[i].querySelector("td:nth-child(4) > div").innerHTML);
-            const lamp = lampFromImgId[clearImageId];
-            const specificClearType = sCtFromImgId[clearImageId];
+            const clearMedal = clearMedalFromImgId[clearImageId];
             const timeTxt = scoreLines[i].querySelector("td:nth-child(6) > small:nth-child(2)").innerHTML.trim();
             const time = moment(timeTxt, "YYYY-MM-DD h:mm A").unix() * 1000;
 
@@ -91,7 +89,6 @@ function getScores(goToNextPage) {
 
             const scoreJson = {
                 "score": score,
-                "lamp": lamp,
                 "matchType": "inGameID",
                 "identifier": id,
                 "difficulty": difficulty,
@@ -102,8 +99,8 @@ function getScores(goToNextPage) {
                     "great": great,
                     "cool": cool
                 },
-                "hitMeta": {
-                    "specificClearType": specificClearType
+                "optional": {
+                    "clearMedal": clearMedal
                 }
             };
 
