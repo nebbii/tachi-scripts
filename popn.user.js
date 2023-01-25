@@ -89,6 +89,7 @@ function getScores(goToNextPage) {
 
             const scoreJson = {
                 "score": score,
+                "clearMedal": clearMedal,
                 "matchType": "inGameID",
                 "identifier": id,
                 "difficulty": difficulty,
@@ -98,9 +99,6 @@ function getScores(goToNextPage) {
                     "good": good,
                     "great": great,
                     "cool": cool
-                },
-                "optional": {
-                    "clearMedal": clearMedal
                 }
             };
 
