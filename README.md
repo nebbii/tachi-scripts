@@ -2,6 +2,11 @@
 
 This repository contains scripts I have written to export scores from various places in the tachi format. To get started, add these scripts **Tampermonkey** (and **NOT** Greasemonkey) and you should find an export button when visiting your profile.
 
+## Contributors
+Thanks to :
+
+- [@nebbii](https://github.com/nebbii) for fixing compatibility with pop'n music Usaneko scores 
+
 ## Credits
 
 - Original script credits goes to Humanbomb. [Script](https://gist.github.com/vmichalak/7fb3084260b0bf646a36b74eff823d69)
