@@ -64,7 +64,13 @@ function getScores(goToNextPage) {
             const split = url.split("/");
             const id = split[split.length-2]
             let difficulty = scoreLines[i].querySelector("td:nth-child(2)").innerText.split("\n")[1]
-            const clearImageId = Number(scoreLines[i].querySelector("td:nth-child(3) > img").getAttribute("src").replace("https://cdn.projectflower.eu/pnm/grades/pnm_lamp_popn_", "").replace(".png", ""));
+
+            var clearImageId
+            if (scoreLines[i].querySelector("td:nth-child(3) > img").getAttribute("src").includes("pnm_lamp_popn_")) {
+                clearImageId = Number(scoreLines[i].querySelector("td:nth-child(3) > img").getAttribute("src").replace("https://cdn.projectflower.eu/pnm/grades/pnm_lamp_popn_", "").replace(".png", ""));
+            } else {
+                clearImageId = Number(scoreLines[i].querySelector("td:nth-child(3) > img").getAttribute("src").replace("https://cdn.projectflower.eu/pnm/grades/pnm_lamp_cog_", "").replace(".png", ""));
+            }
             const score = Number(scoreLines[i].querySelector("td:nth-child(4) > div").innerHTML);
             const clearMedal = clearMedalFromImgId[clearImageId];
             const timeTxt = scoreLines[i].querySelector("td:nth-child(6) > small:nth-child(2)").innerHTML.trim();
