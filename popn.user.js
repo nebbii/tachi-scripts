@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Flower pop'n Score Exporter
-// @version      0.2
+// @version      0.3
 // @description  Export pop'n scores from Flower. Based off a script by Meta-link and Humanbomb.
 // @author       blobdash
 // @match        https://projectflower.eu/game/pnm/*
