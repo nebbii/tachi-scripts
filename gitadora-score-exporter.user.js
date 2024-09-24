@@ -19,8 +19,10 @@
     'use strict';
 
     const exporting = GM_SuperValue.get("exporting", 0);
+    const gametype = GM_SuperValue.get("gametype", 0);
+
     if(exporting){
-        getScores(1);
+        getScores(1, gametype);
     }
     else
     {
@@ -136,10 +138,12 @@ function getScores(goToNextPage, gametype) {
             exportScores(scores, gametype);
             GM_SuperValue.set("scores", 0);
             GM_SuperValue.set("exporting", 0);
+            GM_SuperValue.set("gametype", gametype);
         }
         else{
             GM_SuperValue.set("scores", scores);
             GM_SuperValue.set("exporting", 1);
+            GM_SuperValue.set("gametype", gametype);
             document.querySelectorAll("li > a[rel='next']")[1].click();
         }
     }
