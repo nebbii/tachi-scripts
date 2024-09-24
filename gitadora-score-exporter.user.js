@@ -63,9 +63,6 @@ function getScores(goToNextPage, gametype) {
         superScores.forEach(score =>  scores.push(score));
     }
 
-    //const clearMedalFromImgId = ["failedUnknown","failedCircle","failedDiamond","failedStar","easyClear","clearCircle","clearDiamond","clearStar","fullComboCircle","fullComboDiamond","fullComboStar","perfect"];
-
-
     for(var i = 0; i < scoreLines.length; i += 2) {
         const url         = scoreLines[i].querySelector("td:nth-child(2) > a").getAttribute("href");
         const split       = url.split("/");
@@ -106,10 +103,6 @@ function getScores(goToNextPage, gametype) {
             difficulty = "BASS " + difficulty
         }
 
-        // judgments from strings to ints
-        // percent can be a float
-        // lamp needs to get retrieved
-        // 
         const scoreJson = {
             "percent": percent,
             "lamp": lamp,
@@ -159,5 +152,5 @@ function exportScores(scores, gametype){
             scores: scores
     };
     var file = new Blob([JSON.stringify(json)], {type: "text/plain;charset=utf-8"});
-    saveAs(file, "gd-export-" + Date.now() + ".json");
+    saveAs(file, "gitadora-export-" + Date.now() + ".json");
 }
