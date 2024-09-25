@@ -5,7 +5,9 @@ This repository contains scripts I have written to export scores from various pl
 ## Contributors
 Thanks to :
 
-- [@nebbii](https://github.com/nebbii) for fixing compatibility with pop'n music Usaneko scores 
+[@nebbii](https://github.com/nebbii) for 
+- Gitadora support!
+- fixing compatibility with pop'n music Usaneko scores 
 
 ## Credits
 
